@@ -1,3 +1,14 @@
-<h1>
-  {{title}}
-</h1>
+<h1>{{title}}</h1>
+<div class="element">
+	<div class="element-left">
+		<app-search (onChoosingCity)=setChoosenCity($event) (onSelectHotel)="setChoosenHotel($event)"></app-search>
+	</div>
+	<div class="element-right">
+		<app-weather [city]="currentCity"></app-weather>
+		<app-social [hotel]="currentHotel"></app-social>
+	</div>
+	<div class="clear"> </div>
+</div>
+<div class="copy-right">
+	<p>© 2015 Hot Weather Widget. All rights reserved | Design by <a href="http://w3layouts.com/" target="_blank">  W3layouts </a></p>
+</div>

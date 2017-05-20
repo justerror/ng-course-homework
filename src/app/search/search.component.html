@@ -1,0 +1,41 @@
+<div class="element-bg-img"><img src="/assets/img/1.jpg" alt="" class="img-responsive"> </div>
+<div class="element-left-bottom">
+  <div class="ele-strip" *ngIf="cities">
+    <ul>
+      <li><a (click)="changeSearchTerm('')" [class.active]="!selectedSearchTerm && selectedSearchTerm != 0">All</a></li>
+      <li *ngFor="let city of cities; let i = index; let lastItem = last"
+          [ngClass]="{ 'anc-bor': lastItem }"><a (click)="changeSearchTerm(cities[i].city, i)" [class.active]="i == selectedSearchTerm">{{city.city}}</a></li>
+    </ul>
+  </div>
+  <div class="village">
+    <h3>Righteous indignation & like</h3>
+    <span class="line"> </span>
+    <div class="activity_box">
+      <div class="scrollbar" id="style-2">
+        <div *ngIf="hotels; then content; else loadGif"></div>
+        <div #content
+             *ngFor="let hotel of hotels | hotelFilter: searchTerm; let i = index"
+             (click)="SelectHotel(hotel, i)"
+             [class.active]="i == selectedHotelIndex"
+             class="activity-row">
+          <div class="activity-desc">
+            <h5>{{hotel.name}}</h5>
+            <p>{{hotel.city}}</p>
+            <p>{{hotel.info}}</p>
+            <h6>Tel: +{{hotel.tel}}</h6>
+          </div>
+          <div class="activity-img">
+            <ul>
+              <li><img [src]='hotel.images[0]' alt="" /></li>
+              <!-- <li><img [src]='hotel.images[1]' alt="" /></li> -->
+            </ul>
+          </div>
+          <div class="clear"> </div>
+        </div>
+        <ng-template #loadGif>
+          <img class="load-gif" width="100" src="/assets/img/load.gif" alt="Loading...">
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="teddy-bear" *ngIf="currentHotel">
+  <div class="teddy-text">
+    <h4>{{currentHotel?.name}}</h4>
+    <span class="w-line"> </span>
+    <img [src]="currentHotel?.images[1]" alt="" class="img-responsive">
+  </div>
+  <div class="teddy-follow">
+    <ul>
+      <li class="folw-h">
+        <h3>{{currentHotel?.followers}}</h3>
+        <p>Followers</p>
+      </li>
+      <li>
+        <h3>{{currentHotel?.following}}</h3>
+        <p>Following</p>
+      </li>
+    </ul>
+  </div>
+</div>

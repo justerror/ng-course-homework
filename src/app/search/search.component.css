@@ -1,0 +1,25 @@
+.load-gif {
+  display: block;
+  margin: 0 auto;
+}
+
+.ele-strip a {
+  color: #eee;
+  cursor: pointer;
+}
+
+.ele-strip a:hover,
+.ele-strip a:active {
+  color: #fff;
+}
+
+.ele-strip a.active {
+  color: #fff;
+  text-shadow: 0 0 2px #000;
+}
+
+.activity-row:hover,
+.activity-row.active {
+  background-color: #eee;
+  cursor: pointer;
+}
